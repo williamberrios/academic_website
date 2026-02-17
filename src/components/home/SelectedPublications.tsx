@@ -1,5 +1,6 @@
 'use client';
 
+import { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Publication } from '@/types/publication';
@@ -11,6 +12,17 @@ interface SelectedPublicationsProps {
 }
 
 export default function SelectedPublications({ publications, title = 'Selected Publications', enableOnePageMode = false }: SelectedPublicationsProps) {
+    const publicationsByYear = useMemo(() => {
+        const yearMap = new Map<number, Publication[]>();
+        for (const pub of publications) {
+            if (!yearMap.has(pub.year)) {
+                yearMap.set(pub.year, []);
+            }
+            yearMap.get(pub.year)!.push(pub);
+        }
+        return Array.from(yearMap.entries()).sort((a, b) => b[0] - a[0]);
+    }, [publications]);
+
     return (
         <motion.section
             initial={{ opacity: 0, y: 20 }}
@@ -28,7 +40,10 @@ export default function SelectedPublications({ publications, title = 'Selected P
                 </Link>
             </div>
             <div className="space-y-4">
-                {publications.map((pub, index) => (
+                {publicationsByYear.map(([year, pubs]) => (
+                    <div key={year}>
+                        <h3 className="text-lg font-serif font-bold text-primary mb-2 mt-1">{year}</h3>
+                        {pubs.map((pub, index) => (
                     <motion.div
                         key={pub.id}
                         initial={{ opacity: 0, y: 20 }}
@@ -104,6 +119,8 @@ export default function SelectedPublications({ publications, title = 'Selected P
                             )}
                         </div>
                     </motion.div>
+                        ))}
+                    </div>
                 ))}
             </div>
         </motion.section>

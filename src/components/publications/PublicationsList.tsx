@@ -56,6 +56,22 @@ export default function PublicationsList({ config, publications, embedded = fals
         });
     }, [publications, searchQuery, selectedYear, selectedType]);
 
+    // Group filtered publications by year
+    const publicationsByYear = useMemo(() => {
+        const groups: [number, Publication[]][] = [];
+        const yearMap = new Map<number, Publication[]>();
+        for (const pub of filteredPublications) {
+            if (!yearMap.has(pub.year)) {
+                yearMap.set(pub.year, []);
+            }
+            yearMap.get(pub.year)!.push(pub);
+        }
+        for (const [year, pubs] of yearMap) {
+            groups.push([year, pubs]);
+        }
+        return groups.sort((a, b) => b[0] - a[0]);
+    }, [filteredPublications]);
+
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -188,7 +204,11 @@ export default function PublicationsList({ config, publications, embedded = fals
                         No publications found matching your criteria.
                     </div>
                 ) : (
-                    filteredPublications.map((pub, index) => (
+                    publicationsByYear.map(([year, pubs]) => (
+                        <div key={year}>
+                            <h2 className="text-2xl font-serif font-bold text-primary mb-4 mt-2">{year}</h2>
+                            <div className="space-y-6">
+                    {pubs.map((pub, index) => (
                         <motion.div
                             key={pub.id}
                             initial={{ opacity: 0, y: 20 }}
@@ -343,6 +363,9 @@ export default function PublicationsList({ config, publications, embedded = fals
                                 </div>
                             </div>
                         </motion.div>
+                    ))}
+                            </div>
+                        </div>
                     ))
                 )}
             </div>
