@@ -205,9 +205,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                     </div>
                 ) : (
                     publicationsByYear.map(([year, pubs]) => (
-                        <div key={year}>
-                            <h2 className="text-2xl font-serif font-bold text-primary mb-4 mt-2">{year}</h2>
-                            <div className="space-y-6">
+                        <div key={year} className="space-y-6">
                     {pubs.map((pub, index) => (
                         <motion.div
                             key={pub.id}
@@ -231,9 +229,14 @@ export default function PublicationsList({ config, publications, embedded = fals
                                     </div>
                                 )}
                                 <div className="flex-grow">
-                                    <h3 className={`${embedded ? "text-lg" : "text-xl"} font-semibold text-primary mb-2 leading-tight`}>
-                                        {pub.title}
-                                    </h3>
+                                    <div className="flex justify-between items-start mb-2">
+                                        <h3 className={`${embedded ? "text-lg" : "text-xl"} font-semibold text-primary leading-tight`}>
+                                            {pub.title}
+                                        </h3>
+                                        <span className="text-sm text-neutral-500 font-medium bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded ml-3 flex-shrink-0">
+                                            {pub.year}
+                                        </span>
+                                    </div>
                                     <p className={`${embedded ? "text-sm" : "text-base"} text-neutral-600 dark:text-neutral-400 mb-2`}>
                                         {pub.authors.map((author, idx) => (
                                             <span key={idx}>
@@ -248,7 +251,7 @@ export default function PublicationsList({ config, publications, embedded = fals
                                         ))}
                                     </p>
                                     <p className="text-sm font-medium text-neutral-800 dark:text-neutral-600 mb-3">
-                                        {pub.journal || pub.conference} {pub.year}
+                                        {pub.journal || pub.conference}
                                     </p>
 
                                     {pub.description && (
@@ -364,7 +367,6 @@ export default function PublicationsList({ config, publications, embedded = fals
                             </div>
                         </motion.div>
                     ))}
-                            </div>
                         </div>
                     ))
                 )}
