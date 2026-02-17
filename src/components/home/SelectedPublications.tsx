@@ -42,7 +42,6 @@ export default function SelectedPublications({ publications, title = 'Selected P
             <div className="space-y-4">
                 {publicationsByYear.map(([year, pubs]) => (
                     <div key={year}>
-                        <h3 className="text-lg font-serif font-bold text-primary mb-2 mt-1">{year}</h3>
                         {pubs.map((pub, index) => (
                     <motion.div
                         key={pub.id}
@@ -51,20 +50,25 @@ export default function SelectedPublications({ publications, title = 'Selected P
                         transition={{ duration: 0.4, delay: 0.1 * index }}
                         className="bg-neutral-50 dark:bg-neutral-800 p-4 rounded-lg shadow-sm border border-neutral-200 dark:border-[rgba(148,163,184,0.24)] hover:shadow-lg transition-all duration-200 hover:scale-[1.02]"
                     >
-                        <h3 className="font-semibold text-primary mb-2 leading-tight">
-                            {pub.doi ? (
-                                <a
-                                    href={`https://doi.org/${pub.doi}`}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:text-accent transition-colors"
-                                >
-                                    {pub.title}
-                                </a>
-                            ) : (
-                                pub.title
-                            )}
-                        </h3>
+                        <div className="flex justify-between items-start mb-2">
+                            <h3 className="font-semibold text-primary leading-tight">
+                                {pub.doi ? (
+                                    <a
+                                        href={`https://doi.org/${pub.doi}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:text-accent transition-colors"
+                                    >
+                                        {pub.title}
+                                    </a>
+                                ) : (
+                                    pub.title
+                                )}
+                            </h3>
+                            <span className="text-sm text-neutral-500 font-medium bg-neutral-100 dark:bg-neutral-800 px-2 py-1 rounded ml-3 flex-shrink-0">
+                                {pub.year}
+                            </span>
+                        </div>
                         <p className="text-sm text-neutral-600 dark:text-neutral-500 mb-1">
                             {pub.authors.map((author, idx) => (
                                 <span key={idx}>
