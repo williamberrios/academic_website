@@ -41,7 +41,7 @@ export default function SelectedPublications({ publications, title = 'Selected P
             </div>
             <div className="space-y-4">
                 {publicationsByYear.map(([year, pubs]) => (
-                    <div key={year}>
+                    <div key={year} className="space-y-4">
                         {pubs.map((pub, index) => (
                     <motion.div
                         key={pub.id}

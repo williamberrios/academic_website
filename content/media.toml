@@ -21,6 +21,7 @@ title = "Making LLMs Multi-Modal without Fine-Tuning"
 subtitle = "Chai Time Data Science YouTube channel"
 date = "2023"
 content = "Interview discussing the LENS framework for enabling language models to process visual information without requiring fine-tuning."
+link = "https://www.youtube.com/watch?v=88uHdoijUHQ"
 
 [[items]]
 title = "Promoting national talent: The case of the students from the National University of Engineering, winners of the Data Science Challenge"
