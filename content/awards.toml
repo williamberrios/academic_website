@@ -20,12 +20,14 @@ tweet = "https://x.com/w33lliam/status/1937165574230204428"
 title = "1st Place BBVA Data Challenge"
 date = "2023"
 content = "Rank 1/500. Organized by BBVA. Awarded $3000."
+link = "https://www-bbva-com.translate.goog/es/pe/conoce-a-los-ganadores-del-data-challenge-2023/?_x_tr_sl=es&_x_tr_tl=en&_x_tr_hl=en&_x_tr_pto=wapp"
+
 
 [[items]]
 title = "2nd Place at Brain-Score Competition"
 date = "2022"
 content = "Rank 2/21. Organized by MIT Intelligence Quest and MIT IBM Watson AI Lab. Awarded $1250."
-link = "https://www.brain-score.org/"
+link = "https://drive.google.com/file/d/14C9p0L41WfVESoInFDnCrkiN35k6mGIK/view"
 
 [[items]]
 title = "2nd Place at International Interbank Datathon"
@@ -36,11 +38,13 @@ content = "Rank 2/232. Organized by Interbank - Peru. Awarded $6000."
 title = "1st Place at BNP Machine Learning Competition"
 date = "2021"
 content = "Rank 1/100. Organized by BNP Paribas Cardif and Domino DataLab."
+link = "https://www.linkedin.com/posts/bnp-paribas-cardif_data-science-challenge-activity-6801626722467885056-zcFd/"
 
 [[items]]
 title = "1st Place at International BCI Machine Learning Competition"
 date = "2021"
 content = "Rank 1/400 (15+ countries). Organized by BCI Bank - Chile. Awarded $3600."
+link = "https://www.linkedin.com/feed/update/urn:li:activity:6882387816848871424/"
 
 [[items]]
 title = "Silver Medal at Ventilator Pressure Prediction"

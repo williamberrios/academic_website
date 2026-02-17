@@ -2,6 +2,14 @@ type = "card"
 title = "Media Coverage"
 description = "Press and media features."
 
+
+[[items]]
+title = "Contextual AI overcomes Gen AI hallucinations with Llama models on Google Cloud"
+subtitle = "Google Cloud & Meta"
+date = "2025"
+link = "https://cloud.google.com/customers/contextualai"
+
+
 [[items]]
 title = "Peruvian engineer from UNI revolutionizes Silicon Valley with artificial intelligence models in the United States"
 subtitle = "LaRepublica Newspaper - Peru"
