@@ -1,3 +1,21 @@
+
+@misc{vassilyev2026rcl,
+  selected={true},
+  title = {Reflective Context Learning: Studying the Optimization Primitives of Context Space},
+  author = {Nikita Vassilyev and William Berrios and Ruowang Zhang and Bo Han and Douwe Kiela and Shikib Mehri},
+  year = {2026},
+  month = apr,
+  eprint = {2604.03189},
+  archiveprefix = {arXiv},
+  primaryclass = {cs.LG},
+  doi = {10.48550/arXiv.2604.03189},
+  abstract = {Generally capable agents must learn from experience in ways that generalize across tasks and environments. The fundamental problems of learning, including credit assignment, overfitting, forgetting, local optima, and high-variance learning signals, persist whether the learned object lies in parameter space or context space. While these challenges are well understood in classical machine learning optimization, they remain underexplored in context space, leading current methods to be fragmented and ad hoc. We present Reflective Context Learning (RCL), a unified framework for agents that learn through repeated interaction, reflection on behavior and failure modes, and iterative updates to context. In RCL, reflection converts trajectories and current context into a directional update signal analogous to gradients, while mutation applies that signal to improve future behavior in context space. We recast recent context-optimization approaches as instances of this shared learning problem and systematically extend them with classical optimization primitives, including batching, improved credit-assignment signal, auxiliary losses, failure replay, and grouped rollouts for variance reduction. On AppWorld, BrowseComp+, and RewardBench2, these primitives improve over strong baselines, with their relative importance shifting across task regimes. We further analyze robustness to initialization, the effects of batch size, sampling and curriculum strategy, optimizer-state variants, and the impact of allocating stronger or weaker models to different optimization components. Our results suggest that learning through context updates should be treated not as a set of isolated algorithms, but as an optimization problem whose mechanisms can be studied systematically and improved through transferable principles.},
+  description = {A unified framework treating context updates as an optimization problem, extending context learning with classical primitives like batching, failure replay, and grouped rollouts.},
+  keywords = {Context Learning, LLM Agents, Optimization, Reflection},
+  preview = {rcl.png},
+  code = {https://github.com/nvassilyev/RCL}
+}
+
 @misc{berrios2023lens,
   selected={true},
   title = {Towards Language Models That Can See: Computer Vision Through the LENS of Natural Language},
